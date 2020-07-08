@@ -1,3 +1,5 @@
-192.168.55.251tmsh create ltm monitor http demo_LTMMonitor 
+192.168.55.251
+tmsh create ltm monitor http demo_LTMMonitor 
 tmsh create ltm pool demo_ppol    members add {  3.2.2.1:8080  } monitor demo_LTMMonitor
-tmsh create ltm virtual demo  destination 2.1.1.1:8080 pool demo_ppol
+tmsh create ltm persistence cookie demo_Persistence 
+tmsh create ltm virtual demo  destination 2.1.1.1:8080 persist demo_Persistence  pool demo_ppol
