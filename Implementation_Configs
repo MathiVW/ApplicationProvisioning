@@ -1,1 +1,3 @@
-{'deviceList': [{'deviceName': '192.168.55.251', 'commands': [{'type': 'command', 'deviceName': '', 'uniqueNumber': 2, 'sequenceNumber': 0, 'command': 'tmsh create ltm monitor http demo_LTMMonitor ', 'newCommand': False, 'properties': {'sleep': 0, 'wait': 0}}, {'type': 'command', 'deviceName': '', 'uniqueNumber': 3, 'sequenceNumber': 0, 'command': 'tmsh create ltm pool demo_ppol    members add {  3.2.2.1:8080  } monitor demo_LTMMonitor', 'newCommand': False, 'properties': {'sleep': 0, 'wait': 0}}, {'type': 'command', 'deviceName': '', 'uniqueNumber': 4, 'sequenceNumber': 0, 'command': 'tmsh create ltm virtual demo  destination 2.1.1.1:8080 pool demo_ppol', 'newCommand': False, 'properties': {'sleep': 0, 'wait': 0}}]}]}
+192.168.55.251tmsh create ltm monitor http demo_LTMMonitor 
+tmsh create ltm pool demo_ppol    members add {  3.2.2.1:8080  } monitor demo_LTMMonitor
+tmsh create ltm virtual demo  destination 2.1.1.1:8080 pool demo_ppol
