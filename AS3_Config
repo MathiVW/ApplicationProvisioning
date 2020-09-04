@@ -1,0 +1,45 @@
+{
+    "class": "AS3",
+    "action": "patch",
+    "schemaVersion": "3.11.0",
+    "persist": true,
+    "patchBody": [
+        {
+            "op": "add",
+            "path": "/Prod/new_vip_lab",
+            "value": {
+                "class": "Application",
+                "template": "generic",
+                "new_vip_lab": {
+                    "class": "Service_HTTP",
+                    "snat": "auto",
+                    "virtualAddresses": [
+                        "192.168.34.11"
+                    ],
+                    "virtualPort": 80,
+                    "pool": "new_vip_prod"
+                },
+                "new_vip_prod": {
+                    "class": "Pool",
+                    "monitors": [
+                        "http"
+                    ],
+                    "members": [
+                        {
+                            "servicePort": 5004,
+                            "serverAddresses": [
+                                "192.168.95.186"
+                            ]
+                        },
+                        {
+                            "servicePort": 5004,
+                            "serverAddresses": [
+                                "192.168.142.172"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
