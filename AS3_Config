@@ -6,15 +6,15 @@
     "patchBody": [
         {
             "op": "add",
-            "path": "/Prod/new_vip_lab",
+            "path": "/Prod/new_vip_lab12",
             "value": {
                 "class": "Application",
                 "template": "generic",
-                "new_vip_lab": {
+                "new_vip_lab12": {
                     "class": "Service_HTTP",
                     "snat": "auto",
                     "virtualAddresses": [
-                        "192.168.34.11"
+                        "192.168.34.12"
                     ],
                     "virtualPort": 80,
                     "pool": "new_vip_prod"
